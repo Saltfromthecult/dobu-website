@@ -6,11 +6,12 @@ import {
   Meta,
   Outlet,
   Scripts,
-  ScrollRestoration,
+  ScrollRestoration
 } from "@remix-run/react";
 
-import tailwindStylesheetUrl from "./styles/tailwind.css";
+import Navbar from "./components/navbar";
 import { getUser } from "./session.server";
+import tailwindStylesheetUrl from "./styles/tailwind.css";
 
 export const links: LinksFunction = () => {
   return [{ rel: "stylesheet", href: tailwindStylesheetUrl }];
@@ -36,6 +37,7 @@ export default function App() {
         <Links />
       </head>
       <body className="h-full">
+        <Navbar />
         <Outlet />
         <ScrollRestoration />
         <Scripts />
