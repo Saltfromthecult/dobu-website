@@ -1,10 +1,14 @@
-import {Link} from "@remix-run/react"
+import {Form,Link} from "@remix-run/react"
 import { useState } from "react";
 import logo from "~/assets/img/Logo-1.jpg";
 import NavbarLink from "./NavbarLink";
+import { useOptionalUser } from "~/utils";
+import { Console } from "console";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const user = useOptionalUser();
+    console .log({user});
     return(
         <header className="bg-white-900 md:flex md:justify-between">
             <div className= "flex items-center justify-between px-4 py-3">
@@ -12,7 +16,7 @@ const Navbar = () => {
                 <img className="h-16 w-auto" src={logo} alt="Dobu Martial Arts Gym" /> 
             </div>
             <div className="md:hidden">
-                <button className="block text-gray-500 hover:text-black focus:outline-none" 
+                <button className="block text-gray-500 hover:text-white focus:outline-none" 
                 type="button"
                 onClick={() => setIsOpen(!isOpen)}>
                 
@@ -31,7 +35,19 @@ const Navbar = () => {
                 <NavbarLink url="/">Home</NavbarLink>
                 <NavbarLink url="/classes">Classes</NavbarLink>
                 <NavbarLink url="/memberships">Memberships</NavbarLink>
-                <NavbarLink url="/login">Login</NavbarLink>
+                <Form action="/logout" method="post">
+                    <button
+                    type="submit"
+                    className="mt-4 rounded border-2 border-slate-700 bg-slate-600 px-4 py-2 text-blue-100 hover:bg-blue-500 active:bg-blue-600 lg:mt-0 lg:ml-4"
+                >
+                    Logout
+                </button>
+                    <Link to="/login"
+                type="button"
+                className="mt-4 rounded border-2 border-neutral-700 bg-neutral-300 px-4 py-2 text-neutral-900 transition-colors hover:bg-neutral-100 lg:mt-0 lg:ml-4"
+                > Login
+                </Link>
+                </Form>
             </div>
         </header>
     )

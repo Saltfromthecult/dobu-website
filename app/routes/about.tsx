@@ -39,6 +39,7 @@ export default function about() {
           <li className="mb-4 rounded-lg bg-white p-4 text-center shadow-lg transition-all last-of-type:mb-0 hover:scale-105 hover:cursor-pointer">
             <h2 className="mb-3 font-serif text-2xl font-extrabold tracking-wide text-green-900">
               We hold many competitions many of which can be found on our facebook and twitter pages.
+              https://twitter.com/DobuMartialArts
             </h2>
             <dl>
             <img

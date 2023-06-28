@@ -1,27 +1,34 @@
 import {json, LoaderArgs } from "@remix-run/node";
-import { useLoaderData } from "react-router";
+import { Form,useLoaderData } from "@remix-run/react";
 import MembershipCard from "~/components/MembershipCard";
 import { getMemberships } from "~/models/membership.server";
 import { requireUserId } from "~/session.server";
 import {useUser} from "~/utils"; 
 
+
 export const loader = async ({ request }: LoaderArgs) => {
   await requireUserId(request);
 
-  return json({ memberships: await getMemberships()});
+  return json({memberships: await getMemberships()});
 };
 
 
 export default function Memberships() {
-  const { memberships } = useLoaderData<typeof loader>();
+  const {memberships} = useLoaderData<typeof loader>();
   const user = useUser();
+
+  const handleChange = (event: React.FormEvent<HTMLFormElement>) => {
+    console.log('Form changed!')
+  };
   console.log({ memberships });
 
     return (
       <div className="min-h-screen bg-blue-100 p-4">
         <h1 className="mb-4 text-center font-serif text-4xl font-extrabold text-red-900">
           Membership Page
-        </h1>
+         </h1>
+        <Form method="post" onChange={(event)=> handleChange(event)}>
+          
         <ul className="mx-auto max-w-xl p-4">
           {memberships.map(({level, description, price})=>(
             <MembershipCard
@@ -179,6 +186,7 @@ export default function Memberships() {
             </dl>
           </li>
         </ul>
+        </Form>
       </div>
     );
   }

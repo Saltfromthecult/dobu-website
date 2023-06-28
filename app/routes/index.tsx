@@ -1,7 +1,12 @@
 import { Link } from "@remix-run/react";
 import instructor from "~/assets/img/martial-arts-instructor.jpg";
+import { MetaFunction } from "@remix-run/node";
 
 import { useOptionalUser } from "~/utils";
+export const meta: MetaFunction = () => ({
+  title: 'Welcome to Dobu Martial Arts',
+  description: 'This is where you will be leaning martial arts',
+});
 
 export default function Index() {
   const user = useOptionalUser();
@@ -11,7 +16,7 @@ export default function Index() {
       <div className="relative sm:pb-16 sm:pt-8">
         <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
-            <div className="absolute inset-0">
+            <div className="absolute inset-0">  
               <img
                 className="h-39 w-30 object-cover"
                 src={instructor}
@@ -59,7 +64,8 @@ export default function Index() {
                 className="h-39 w-30 object-cover"
                 src={instructor}
                 alt="Dobu Martial Arts"
-              /> </div>
+              />
+               </div>
         </div>
 
       </div>
