@@ -17,7 +17,7 @@ export default function Index() {
         <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
             <div className="absolute inset-0">  
-              <img
+            <img
                 className="h-39 w-30 object-cover"
                 src={instructor}
                 alt="Dobu Martial Arts"
@@ -59,13 +59,7 @@ export default function Index() {
             </div>
           </div>
           
-          <div className="w-48 h-48 overflow-hidden rounded-full bg-neutral-300">
-          <img
-                className="h-39 w-30 object-cover"
-                src={instructor}
-                alt="Dobu Martial Arts"
-              />
-               </div>
+         
         </div>
 
       </div>

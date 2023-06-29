@@ -13,7 +13,7 @@ export default function about() {
           <li className="mb-4 rounded-lg bg-white p-4 text-center shadow-lg transition-all last-of-type:mb-0 hover:scale-105 hover:cursor-pointer">
         
             <h2 className="mb-4 font-serif text-2xl tracking-wide text-green-900">
-                we here at Dobu Martial-arts we pride ourselfs on ensuring young people get the possabilities to hang out with friends while getting exercise.its important that young people can also learn to defend themselves as they may need it one day 
+            We here at Dobu Martial-arts we pride ourselves on ensuring young people get the possibilities to hang out with friends while getting exercise. Its important that young people can also learn to defend themselves as they may need it one day.
             </h2>
             <dl>
             <img

@@ -47,10 +47,5 @@ model Membership {
 
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
-
-   password      Password?
-  notes         Note[]
-  membership    Membership? @relation(fields: [membershipId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  membershipId  String?
   users       User[]
 }
